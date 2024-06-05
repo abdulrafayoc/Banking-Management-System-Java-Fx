@@ -1,26 +1,19 @@
 package persistence.repository;
 
 import business.models.*;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.List;
 
 public class TransactionRepositoryImpl implements CrudRepository<Transaction, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
 
-    public TransactionRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Transaction> S save(S transaction) {
         String sql = "INSERT INTO transactions (amount, type, timestamp, account_id) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setDouble(1, transaction.getAmount());

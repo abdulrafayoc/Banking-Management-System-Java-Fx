@@ -2,6 +2,7 @@ package persistence.repository;
 
 
 import business.models.Branch;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,20 +10,11 @@ import java.util.List;
 
 public class BranchRepositoryImpl implements CrudRepository<Branch, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public BranchRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Branch> S save(S branch) {
         String sql = "INSERT INTO branches (location) VALUES (?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, branch.getLocation());
@@ -59,8 +51,8 @@ public class BranchRepositoryImpl implements CrudRepository<Branch, Integer> {
         List<Branch> branches = new ArrayList<>();
         String sql = "SELECT * FROM branches";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             Statement stmt = conn.createStatement();
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
@@ -83,8 +75,8 @@ public class BranchRepositoryImpl implements CrudRepository<Branch, Integer> {
     @Override
     public void update(Branch branch) {
         String sql = "UPDATE branches SET location = ? WHERE branch_id = ?";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, branch.getLocation());
             stmt.setInt(2, branch.getBranchId());

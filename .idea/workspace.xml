@@ -5,62 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="3 tier Architecture Done">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba/storage_v2/_src_/schema/bms.iH0BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/AccountStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/AccountStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Branch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/CardType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/TransactionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/BankService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/BranchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/InsufficientFundsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/TransactionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/BankRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/BranchRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/CardRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/CrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/EmployeeRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/ReportRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/TransactionRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/models/TransactionSummary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/AccountFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/AccountStatementFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/CheckingAccountFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/ReportFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/SavingsAccountFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/services/factories/TransactionSummaryFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businesslogic/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businesslogic/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/businesslogic/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccesslayer/TransactionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccesslayer/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/DashboardWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/viewmodels/DashboardWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/viewmodels/LoginWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/BankRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/BankRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/BranchRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/BranchRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/CardRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/CardRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/CustomerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/EmployeeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/EmployeeRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/ReportRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/ReportRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/TransactionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/TransactionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/UserRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,14 +53,12 @@
     &quot;assignee&quot;: &quot;abdulrafayoc&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="e5f37bfe-7f8b-4012-a870-0b8a749de2b7" />
-        <option name="url" value="https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git&quot;,
+    &quot;accountId&quot;: &quot;e5f37bfe-7f8b-4012-a870-0b8a749de2b7&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -111,31 +77,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora_aws&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="businesslogic" />
@@ -145,10 +111,17 @@
       <recent name="org.bms.presentation" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="HelloApplication" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.bms.presentation.HelloApplication" />
-      <module name="BankingApp" />
+      <module name="bms" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.bms.presentation.controllers.*" />
@@ -159,24 +132,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="bms" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="bms" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -190,8 +158,21 @@
       <workItem from="1717572579947" duration="387000" />
       <workItem from="1717572994980" duration="62000" />
       <workItem from="1717573223385" duration="10008000" />
-      <workItem from="1717586393666" duration="890000" />
+      <workItem from="1717586393666" duration="1046000" />
+      <workItem from="1717598557837" duration="44000" />
+      <workItem from="1717598618517" duration="2684000" />
+      <workItem from="1717601354568" duration="391000" />
+      <workItem from="1717601770695" duration="9763000" />
     </task>
+    <task id="LOCAL-00001" summary="3 tier Architecture Done">
+      <option name="closed" value="true" />
+      <created>1717588038081</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717588038081</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

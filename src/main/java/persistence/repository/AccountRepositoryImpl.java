@@ -1,6 +1,7 @@
 package persistence.repository;
 
 import business.models.Account;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,20 +9,11 @@ import java.util.List;
 
 public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public AccountRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Account> S save(S account) {
         String sql = "INSERT INTO accounts (balance, type, status, customer_id, branch_id) VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setDouble(1, account.getBalance());
@@ -61,9 +53,11 @@ public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
         List<Account> accounts = new ArrayList<>();
         String sql = "SELECT * FROM accounts";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             Statement stmt = conn.createStatement();
+
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
              ResultSet rs = stmt.executeQuery(sql)) {
+
 
             while (rs.next()) {
                 // Retrieve by column name
@@ -90,8 +84,9 @@ public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
     @Override
     public void update(Account account) {
         String sql = "UPDATE accounts SET balance = ?, type = ?, status = ?, customer_id = ?, branch_id = ? WHERE account_id = ?";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
 
             stmt.setDouble(1, account.getBalance());
             stmt.setString(2, account.getType().toString());

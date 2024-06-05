@@ -15,9 +15,18 @@ public class Account {
     private List<Transaction> transactions;
     private List<Card> cards;
 
-    public Account(int accountId, double balance, AccountType type, AccountStatus status,
+    public Account(double balance, AccountType type, Customer customer, Branch branch) {
+        this.balance = balance;
+        this.type = type;
+        this.customer = customer;
+        this.branch = branch;
+        this.transactions = new ArrayList<>();
+        this.cards = new ArrayList<>();
+        this.status = AccountStatus.ACTIVE;
+    }
+
+    public Account(double balance, AccountType type, AccountStatus status,
                    Customer customer, Branch branch) {
-        this.accountId = accountId;
         this.balance = balance;
         this.type = type;
         this.status = status;

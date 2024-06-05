@@ -2,6 +2,7 @@ package persistence.repository;
 
 
 import business.models.Bank;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,20 +10,11 @@ import java.util.List;
 
 public class BankRepositoryImpl implements CrudRepository<Bank, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public BankRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Bank> S save(S bank) {
         String sql = "INSERT INTO banks (name, address) VALUES (?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, bank.getName());
@@ -60,8 +52,8 @@ public class BankRepositoryImpl implements CrudRepository<Bank, Integer> {
         List<Bank> banks = new ArrayList<>();
         String sql = "SELECT * FROM banks";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             Statement stmt = conn.createStatement();
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
@@ -84,8 +76,8 @@ public class BankRepositoryImpl implements CrudRepository<Bank, Integer> {
     @Override
     public void update(Bank bank) {
         String sql = "UPDATE banks SET address = ? WHERE name = ?";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, bank.getAddress());
             stmt.setString(2, bank.getName());

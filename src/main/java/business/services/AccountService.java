@@ -2,6 +2,7 @@ package business.services;
 
 import business.models.*;
 import persistence.repository.*;
+import business.services.factories.*;
 
 import java.util.Date;
 import java.util.List;
@@ -20,7 +21,23 @@ public class AccountService {
     }
 
     public Account createAccount(AccountType type, double initialBalance, Customer customer, Branch branch) {
-        Account newAccount = new Account(generateAccountId(), initialBalance, type, AccountStatus.ACTIVE, customer, branch);
+        AccountFactory factory = null;
+
+        // Determine the factory to use based on the account type
+        switch (type) {
+            case CHECKING:
+                factory = new CheckingAccountFactory();
+                break;
+            case SAVINGS:
+                factory = new SavingsAccountFactory();
+                break;
+            // ... add cases for other account types
+            default:
+                throw new IllegalArgumentException("Invalid account type: " + type);
+        }
+
+        // Use the factory to create the account
+        Account newAccount = factory.createAccount(initialBalance, customer, branch);
         accountRepository.save(newAccount);
         return newAccount;
     }

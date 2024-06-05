@@ -1,6 +1,7 @@
 package persistence.repository;
 
 import business.models.*;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.List;
@@ -8,21 +9,11 @@ import java.util.List;
 
 public class CardRepositoryImpl implements CrudRepository<Card, String> { // Assuming card number is the ID
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public CardRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
-
     @Override
     public <S extends Card> S save(S card) {
         String sql = "INSERT INTO cards (card_number, cardholder_name, expiry_date, cvv, is_blocked, card_type, account_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, card.getCardNumber());
             stmt.setString(2, card.getCardholderName());

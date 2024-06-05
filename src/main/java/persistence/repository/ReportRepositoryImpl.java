@@ -1,26 +1,19 @@
 package persistence.repository;
 
 import business.models.*;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.List;
 
 public class ReportRepositoryImpl implements CrudRepository<Report, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
 
-    public ReportRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Report> S save(S report) {
         String sql = "INSERT INTO reports (content, timestamp, employee_id) VALUES (?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, report.getContent());

@@ -1,6 +1,7 @@
 package persistence.repository;
 
 import business.models.Customer;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,20 +9,11 @@ import java.util.List;
 
 public class CustomerRepositoryImpl implements CrudRepository<Customer, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public CustomerRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends Customer> S save(S customer) {
         String sql = "INSERT INTO customers (name, address, date_of_birth, user_id) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, customer.getName());
@@ -61,8 +53,8 @@ public class CustomerRepositoryImpl implements CrudRepository<Customer, Integer>
         List<Customer> customers = new ArrayList<>();
         String sql = "SELECT * FROM customers";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             Statement stmt = conn.createStatement();
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
@@ -91,7 +83,7 @@ public class CustomerRepositoryImpl implements CrudRepository<Customer, Integer>
     @Override
     public void update(Customer customer) {
         String sql = "UPDATE customers SET name = ?, address = ?, date_of_birth = ?, user_id = ? WHERE customer_id = ?";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, customer.getName());

@@ -2,6 +2,7 @@ package persistence.repository;
 
 import business.models.User;
 import business.models.UserRole;
+import persistence.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,20 +10,11 @@ import java.util.List;
 
 public class UserRepositoryImpl implements CrudRepository<User, Integer> {
 
-    private final String DB_URL;
-    private final String USER;
-    private final String PASS;
-
-    public UserRepositoryImpl(String dbUrl, String user, String pass) {
-        this.DB_URL = dbUrl;
-        this.USER = user;
-        this.PASS = pass;
-    }
 
     @Override
     public <S extends User> S save(S user) {
         String sql = "INSERT INTO users (phone_number, name, username, password, role) VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, user.getPhoneNumber());
@@ -62,9 +54,10 @@ public class UserRepositoryImpl implements CrudRepository<User, Integer> {
         List<User> users = new ArrayList<>();
         String sql = "SELECT * FROM users";
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-             Statement stmt = conn.createStatement();
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
              ResultSet rs = stmt.executeQuery(sql)) {
+
 
             while (rs.next()) {
                 // Retrieve by column name
@@ -100,7 +93,7 @@ public class UserRepositoryImpl implements CrudRepository<User, Integer> {
     // Custom method to find a user by username (used during authentication)
     public User findByUsername(String username) {
         String sql = "SELECT * FROM users WHERE username = ?";
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, username);
