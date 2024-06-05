@@ -1,4 +1,4 @@
-package org.bms.presentation;
+package org.bms.presentation.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
