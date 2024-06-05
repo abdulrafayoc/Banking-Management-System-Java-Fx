@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import persistence.repository.UserRepositoryImpl;
 
 import java.io.IOException;
 
@@ -25,13 +26,14 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    private UserService userService; // Inject this using DI
 
     // Add this default constructor:
     public LoginController() {
-
+        UserRepositoryImpl userRepository = new UserRepositoryImpl();
+        this.userService = new UserService(userRepository);
     }
 
-    private UserService userService; // Inject this using DI
 
     // Constructor or @Autowired (if using Spring)
     public LoginController(UserService userService) {
@@ -48,7 +50,7 @@ public class LoginController {
         if (authenticatedUser != null) {
             try {
                 // Load the appropriate dashboard based on user role
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountView.fxml")); // Example
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml")); // Example
                 Parent root = loader.load();
 
                 // ... (Pass any necessary data to the next view)

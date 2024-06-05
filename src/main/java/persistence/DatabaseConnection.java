@@ -16,7 +16,7 @@ public class DatabaseConnection {
         try {
             // Load database properties from a file (or use environment variables)
             Properties props = new Properties();
-            try (FileInputStream fis = new FileInputStream("database.properties")) {
+            try (FileInputStream fis =  new FileInputStream("src/main/resources/database.properties")) {
                 props.load(fis);
             } catch (IOException e) {
                 e.printStackTrace();
