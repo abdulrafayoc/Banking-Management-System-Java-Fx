@@ -1,6 +1,7 @@
 package business.services;
 
 import business.models.*;
+import javafx.scene.control.Alert;
 import persistence.repository.*;
 import business.services.factories.*;
 
@@ -56,6 +57,11 @@ public class AccountService {
         Transaction transaction = new Transaction(generateTransactionId(), amount,
                 TransactionType.WITHDRAWAL, new Date(), account);
         transactionRepository.save(transaction);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Transaction Successful");
+        alert.setHeaderText(null);
+        alert.setContentText("Money withdrawn successfully!");
+        alert.showAndWait();
     }
 
     public void transfer(Account sourceAccount, Account destinationAccount, double amount) {

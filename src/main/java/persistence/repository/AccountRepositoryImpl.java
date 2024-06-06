@@ -6,7 +6,8 @@ import persistence.DatabaseConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import business.models.AccountType;
+import business.models.AccountStatus;
 public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
 
 
@@ -45,28 +46,34 @@ public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
     @Override
     public Account findById(Integer accountId) {
         String sql = "SELECT * FROM accounts WHERE account_id = ?";
-        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
-             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, accountId);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // Retrieve by column name
                 int id = rs.getInt("account_id");
                 double balance = rs.getDouble("balance");
-                // ... retrieve other fields
+                String typeStr = rs.getString("type");
+                String statusStr = rs.getString("status");
+                int customerId = rs.getInt("customer_id");
+                int branchId = rs.getInt("branch_id");
 
-                // Assuming you have methods to fetch Customer and Branch by ID
-                // Customer customer = customerRepository.findById(...);
-                // Branch branch = branchRepository.findById(...);
+                // Convert type and status from String to AccountType and AccountStatus
+                AccountType type = AccountType.valueOf(typeStr);
+                AccountStatus status = AccountStatus.valueOf(statusStr);
 
-                // Account account = new Account(id, balance, /* ... other fields */);
-                // return account;
+                // Fetch the Customer and Branch by their IDs
+                //Customer customer = customerRepository.findById(customerId);
+                //Branch branch = branchRepository.findById(branchId);
+
+                // Create and return an Account object
+                Account account = new Account(id, balance, type, status, null, null);
+                return account;
             }
 
         } catch (SQLException e) {
-            // Handle exceptions (log, rethrow, etc.)
             e.printStackTrace();
         }
         return null;

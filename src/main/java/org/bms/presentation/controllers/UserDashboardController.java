@@ -37,14 +37,14 @@ public class UserDashboardController {
         this.customerService = customerService;
     }
 
-    public void initializeDashboard(User user) {
-        this.loggedInUser = user;
-        welcomeLabel.setText("Welcome, " + loggedInUser.getName());
-    }
-
     @FXML
     private void onDepositFunds(ActionEvent event) {
         loadView(event, "/org/bms/presentation/DepositFundsView.fxml");
+    }
+
+    @FXML
+    private void onWithdrawFunds(ActionEvent event) {
+        loadView(event, "/org/bms/presentation/WithdrawFundsView.fxml");
     }
 
     @FXML
@@ -89,5 +89,10 @@ public class UserDashboardController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setAuthenticatedUser(User user) {
+        this.loggedInUser = user;
+        welcomeLabel.setText("Welcome, " + loggedInUser.getName());
     }
 }
