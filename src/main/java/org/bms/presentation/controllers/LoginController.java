@@ -59,6 +59,9 @@ public class LoginController {
                 Parent root = loader.load();
 
                 // ... (Pass any necessary data to the next view)
+                // Get the UserDashboardController and pass the authenticated user
+                UserDashboardController userDashboardController = loader.getController();
+                userDashboardController.setAuthenticatedUser(authenticatedUser);
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));

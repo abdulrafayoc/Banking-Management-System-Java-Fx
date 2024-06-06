@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login connected to dashboard">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
+    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Fixed some issues">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/WithdrawFundsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/WithdrawFundsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
@@ -155,7 +156,8 @@
       <workItem from="1717665809404" duration="597000" />
       <workItem from="1717668937781" duration="144000" />
       <workItem from="1717669095869" duration="18000" />
-      <workItem from="1717669123266" duration="5780000" />
+      <workItem from="1717669123266" duration="6813000" />
+      <workItem from="1717681271707" duration="3608000" />
     </task>
     <task id="LOCAL-00001" summary="3 tier Architecture Done">
       <option name="closed" value="true" />
@@ -197,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717670737228</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed some issues">
+      <option name="closed" value="true" />
+      <created>1717679134762</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717679134762</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +245,8 @@
     <MESSAGE value="implemented Singleton Pattern and Factory Pattern" />
     <MESSAGE value="Login done" />
     <MESSAGE value="Login connected to dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login connected to dashboard" />
+    <MESSAGE value="Fixed some issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some issues" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
