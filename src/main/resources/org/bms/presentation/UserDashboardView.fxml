@@ -25,7 +25,7 @@
       <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #777777" BorderPane.alignment="CENTER">
           <Button fx:id="button_viewAccountDetails" style="-fx-font-size: 16;" text="View Account Details" onAction="#onViewAccountDetails" />
           <Button fx:id="button_depoistFunds" style="-fx-font-size: 16;" text="Deposit Funds" onAction="#onDepositFunds" />
-          <Button fx:id="button_withdrawFunds" style="-fx-font-size: 16;" text="Withdraw Funds" />
+          <Button fx:id="button_withdrawFunds" style="-fx-font-size: 16;" text="Withdraw Funds" onAction="#onWithdrawFunds"/>
           <Button fx:id="button_generateAccStatement" style="-fx-font-size: 16;" text="Generate Account Statement" />
 
       </VBox>
