@@ -1,0 +1,141 @@
+Index: src/main/resources/org/bms/presentation/DepositFundsView.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<VBox prefHeight=\"167.0\" prefWidth=\"330.0\" xmlns:fx=\"http://javafx.com/fxml/1\" xmlns=\"http://javafx.com/javafx/21\" fx:controller=\"org.bms.presentation.controllers.DepositFundsController\">\r\n    <Label alignment=\"CENTER\" prefHeight=\"17.0\" prefWidth=\"332.0\" text=\"Deposit Funds\" />\r\n    <TextField fx:id=\"accountField\" promptText=\"Enter account number\" />\r\n    <TextField fx:id=\"depositAmountField\" promptText=\"Enter deposit amount\" />\r\n    <Label fx:id=\"confirmationLabel\" />\r\n    <Button fx:id=\"depositButton\" alignment=\"CENTER\" onAction=\"#onDepositButtonClick\" text=\"Deposit\" />\r\n</VBox>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/org/bms/presentation/DepositFundsView.fxml b/src/main/resources/org/bms/presentation/DepositFundsView.fxml
+--- a/src/main/resources/org/bms/presentation/DepositFundsView.fxml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/resources/org/bms/presentation/DepositFundsView.fxml	(date 1717685325423)
+@@ -7,7 +7,6 @@
+ 
+ <VBox prefHeight="167.0" prefWidth="330.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.bms.presentation.controllers.DepositFundsController">
+     <Label alignment="CENTER" prefHeight="17.0" prefWidth="332.0" text="Deposit Funds" />
+-    <TextField fx:id="accountField" promptText="Enter account number" />
+     <TextField fx:id="depositAmountField" promptText="Enter deposit amount" />
+     <Label fx:id="confirmationLabel" />
+     <Button fx:id="depositButton" alignment="CENTER" onAction="#onDepositButtonClick" text="Deposit" />
+Index: src/main/resources/database.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>db.url=jdbc:mysql://localhost:3306/bms?useSSL=false\r\ndb.user=root\r\ndb.password=root
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/database.properties b/src/main/resources/database.properties
+--- a/src/main/resources/database.properties	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/resources/database.properties	(date 1717683246704)
+@@ -1,3 +1,3 @@
+ db.url=jdbc:mysql://localhost:3306/bms?useSSL=false
+ db.user=root
+-db.password=root
+\ No newline at end of file
++db.password=12345678
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0054d29a-013b-48fb-8ab1-d59715ff3d5b\" name=\"Changes\" comment=\"Login connected to dashboard\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/business/models/Account.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/business/models/Account.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/business/services/AccountService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/business/services/AccountService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;abdulrafayoc&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"f54495f6-9435-4f03-b741-50a8fa440d38\" />\r\n        <option name=\"url\" value=\"https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.sql/java/sql/SQLException.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2hPdlveGn8umOuR6oAUmKXwq0cK\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/hp/Desktop/SDA/bms/src/main/java/org/bms/presentation&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/FAST/SDA/Final/Bank-Management-System&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql_aurora_aws&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"businesslogic\" />\r\n      <recent name=\"dataaccesslayer\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.bms.presentation\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunAnythingCache\">\r\n    <option name=\"myCommands\">\r\n      <command value=\"HelloApplication\" />\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"20\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.bms.presentation.HelloApplication\" />\r\n      <module name=\"bms\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.bms.presentation.controllers.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0054d29a-013b-48fb-8ab1-d59715ff3d5b\" name=\"Changes\" comment=\"\" />\r\n      <created>1717499805614</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1717499805614</updated>\r\n      <workItem from=\"1717499806529\" duration=\"1627000\" />\r\n      <workItem from=\"1717572579947\" duration=\"387000\" />\r\n      <workItem from=\"1717572994980\" duration=\"62000\" />\r\n      <workItem from=\"1717573223385\" duration=\"10008000\" />\r\n      <workItem from=\"1717586393666\" duration=\"1046000\" />\r\n      <workItem from=\"1717598557837\" duration=\"44000\" />\r\n      <workItem from=\"1717598618517\" duration=\"2684000\" />\r\n      <workItem from=\"1717601354568\" duration=\"391000\" />\r\n      <workItem from=\"1717601770695\" duration=\"15053000\" />\r\n      <workItem from=\"1717622854446\" duration=\"2065000\" />\r\n      <workItem from=\"1717625554830\" duration=\"2114000\" />\r\n      <workItem from=\"1717651497770\" duration=\"13000\" />\r\n      <workItem from=\"1717665809404\" duration=\"597000\" />\r\n      <workItem from=\"1717668937781\" duration=\"144000\" />\r\n      <workItem from=\"1717669095869\" duration=\"18000\" />\r\n      <workItem from=\"1717669123266\" duration=\"5780000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"3 tier Architecture Done\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717588038081</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717588038081</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"implemented Singleton Pattern and Factory Pattern\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717613098579</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717613098579</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"implemented Singleton Pattern and Factory Pattern\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670330023</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670330023</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Login done\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670390948</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670390948</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Login connected to dashboard\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670737228</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670737228</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Created 3 Rier Archi\" />\r\n    <MESSAGE value=\"3 tier archi\" />\r\n    <MESSAGE value=\"3 tier archii\" />\r\n    <MESSAGE value=\"3 tier Architecture Done\" />\r\n    <MESSAGE value=\"implemented Dingleton Pattern and Factory Pattern\" />\r\n    <MESSAGE value=\"implemented Singleton Pattern and Factory Pattern\" />\r\n    <MESSAGE value=\"Login done\" />\r\n    <MESSAGE value=\"Login connected to dashboard\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Login connected to dashboard\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.io.FileNotFoundException\" package=\"java.io\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.sql.SQLException\" package=\"java.sql\" />\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/workspace.xml	(date 1717683967675)
+@@ -5,14 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login connected to dashboard">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,14 +34,12 @@
+     &quot;assignee&quot;: &quot;abdulrafayoc&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings">
+-    <option name="selectedUrlAndAccountId">
+-      <UrlAndAccount>
+-        <option name="accountId" value="f54495f6-9435-4f03-b741-50a8fa440d38" />
+-        <option name="url" value="https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git" />
+-      </UrlAndAccount>
+-    </option>
+-  </component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git",
++    "accountId": "e5f37bfe-7f8b-4012-a870-0b8a749de2b7"
++  }
++}]]></component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.sql/java/sql/SQLException.java" root0="SKIP_INSPECTION" />
+   </component>
+@@ -128,7 +123,8 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2" />
++        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
++        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -156,6 +152,7 @@
+       <workItem from="1717668937781" duration="144000" />
+       <workItem from="1717669095869" duration="18000" />
+       <workItem from="1717669123266" duration="5780000" />
++      <workItem from="1717682929695" duration="1029000" />
+     </task>
+     <task id="LOCAL-00001" summary="3 tier Architecture Done">
+       <option name="closed" value="true" />
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-233.14475.28\">\r\n    <data-source name=\"bms@localhost\" uuid=\"76df328c-4195-4b9a-a2d8-ee0abf1253ba\">\r\n      <database-info product=\"MySQL\" version=\"8.4.0\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"8.4.0\" exact-driver-version=\"8.2\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>root</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/dataSources.local.xml	(date 1717683255078)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-233.14475.28">
++  <component name="dataSourceStorageLocal" created-in="IU-241.17011.79">
+     <data-source name="bms@localhost" uuid="76df328c-4195-4b9a-a2d8-ee0abf1253ba">
+       <database-info product="MySQL" version="8.4.0" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.4.0" exact-driver-version="8.2">
+         <extra-name-characters>#@</extra-name-characters>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_X\" default=\"true\" project-jdk-name=\"corretto-22\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/misc.xml	(date 1717683190373)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

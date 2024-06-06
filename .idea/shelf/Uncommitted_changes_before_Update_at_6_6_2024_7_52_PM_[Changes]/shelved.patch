@@ -1,0 +1,356 @@
+Index: src/main/resources/org/bms/presentation/DepositFundsView.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<VBox prefHeight=\"167.0\" prefWidth=\"330.0\" xmlns:fx=\"http://javafx.com/fxml/1\" xmlns=\"http://javafx.com/javafx/21\" fx:controller=\"org.bms.presentation.controllers.DepositFundsController\">\r\n    <Label alignment=\"CENTER\" prefHeight=\"17.0\" prefWidth=\"332.0\" text=\"Deposit Funds\" />\r\n    <TextField fx:id=\"accountField\" promptText=\"Enter account number\" />\r\n    <TextField fx:id=\"depositAmountField\" promptText=\"Enter deposit amount\" />\r\n    <Label fx:id=\"confirmationLabel\" />\r\n    <Button fx:id=\"depositButton\" alignment=\"CENTER\" onAction=\"#onDepositButtonClick\" text=\"Deposit\" />\r\n</VBox>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/org/bms/presentation/DepositFundsView.fxml b/src/main/resources/org/bms/presentation/DepositFundsView.fxml
+--- a/src/main/resources/org/bms/presentation/DepositFundsView.fxml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/resources/org/bms/presentation/DepositFundsView.fxml	(date 1717685348529)
+@@ -7,7 +7,6 @@
+ 
+ <VBox prefHeight="167.0" prefWidth="330.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.bms.presentation.controllers.DepositFundsController">
+     <Label alignment="CENTER" prefHeight="17.0" prefWidth="332.0" text="Deposit Funds" />
+-    <TextField fx:id="accountField" promptText="Enter account number" />
+     <TextField fx:id="depositAmountField" promptText="Enter deposit amount" />
+     <Label fx:id="confirmationLabel" />
+     <Button fx:id="depositButton" alignment="CENTER" onAction="#onDepositButtonClick" text="Deposit" />
+Index: src/main/java/org/bms/presentation/controllers/DepositFundsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.bms.presentation.controllers;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\n\r\npublic class DepositFundsController {\r\n\r\n    @FXML\r\n    private TextField depositAmountField;\r\n\r\n    @FXML\r\n    private Button depositButton;\r\n\r\n    @FXML\r\n    private Label confirmationLabel;\r\n\r\n    @FXML\r\n    private void onDepositButtonClick() {\r\n\r\n        int accountNumber = Integer.parseInt(accountField.getText());\r\n        double depositAmount = Double.parseDouble(depositAmountField.getText());\r\n        double newBalance = depositAmount;\r\n        if (depositAmount <= 0) {\r\n            confirmationLabel.setText(\"Deposit amount must be positive.\");\r\n            return;\r\n        }\r\n\r\n        //Calculate the new balance\r\n        // This will depend on how your accountService.deposit method works\r\n        // For example, if it returns the new balance, you could do:\r\n        // double newBalance = accountService.deposit(accountNumber, depositAmount);\r\n\r\n        // Update the UI to reflect the successful deposit\r\n        // This might involve displaying a success message, updating the account balance display, etc.\r\n        confirmationLabel.setText(\"Deposit successful. Balance added \" + newBalance);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/bms/presentation/controllers/DepositFundsController.java b/src/main/java/org/bms/presentation/controllers/DepositFundsController.java
+--- a/src/main/java/org/bms/presentation/controllers/DepositFundsController.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/org/bms/presentation/controllers/DepositFundsController.java	(date 1717685446711)
+@@ -7,6 +7,9 @@
+ 
+ public class DepositFundsController {
+ 
++    @FXML
++    private TextField accountField;
++
+     @FXML
+     private TextField depositAmountField;
+ 
+@@ -19,7 +22,6 @@
+     @FXML
+     private void onDepositButtonClick() {
+ 
+-        int accountNumber = Integer.parseInt(accountField.getText());
+         double depositAmount = Double.parseDouble(depositAmountField.getText());
+         double newBalance = depositAmount;
+         if (depositAmount <= 0) {
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_X\" default=\"true\" project-jdk-name=\"corretto-22\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/misc.xml	(date 1717685352318)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/database.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>db.url=jdbc:mysql://localhost:3306/bms?useSSL=false\r\ndb.user=root\r\ndb.password=root
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/database.properties b/src/main/resources/database.properties
+--- a/src/main/resources/database.properties	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/resources/database.properties	(date 1717685348542)
+@@ -1,3 +1,3 @@
+ db.url=jdbc:mysql://localhost:3306/bms?useSSL=false
+ db.user=root
+-db.password=root
+\ No newline at end of file
++db.password=12345678
+\ No newline at end of file
+Index: src/main/java/org/bms/presentation/controllers/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.bms.presentation.controllers;\r\n\r\nimport business.services.UserService;\r\nimport business.models.User;\r\n\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.PasswordField;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.stage.Stage;\r\nimport persistence.repository.UserRepositoryImpl;\r\n\r\nimport java.io.IOException;\r\nimport javafx.scene.control.Alert;\r\n\r\npublic class LoginController {\r\n\r\n    @FXML\r\n    private TextField usernameField;\r\n\r\n    @FXML\r\n    private PasswordField passwordField;\r\n\r\n    private UserService userService; // Inject this using DI\r\n\r\n    // Add this default constructor:\r\n    public LoginController() {\r\n        UserRepositoryImpl userRepository = new UserRepositoryImpl();\r\n        this.userService = new UserService(userRepository);\r\n    }\r\n\r\n\r\n    // Constructor or @Autowired (if using Spring)\r\n    public LoginController(UserService userService) {\r\n        this.userService = userService;\r\n    }\r\n\r\n    @FXML\r\n    private void onLoginButtonClick(ActionEvent event) {\r\n        String username = usernameField.getText();\r\n        String password = passwordField.getText();\r\n\r\n        User authenticatedUser = userService.authenticateUser(username, password);\r\n\r\n        if (authenticatedUser != null) {\r\n            Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n            alert.setTitle(\"Login Successful\");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(\"Welcome\");\r\n            alert.showAndWait();\r\n            try {\r\n                // Load the appropriate dashboard based on user role\r\n                FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/org/bms/presentation/UserDashboardView.fxml\"));\r\n                Parent root = loader.load();\r\n\r\n                // ... (Pass any necessary data to the next view)\r\n\r\n                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n                stage.setScene(new Scene(root));\r\n                stage.show();\r\n\r\n            } catch (IOException e) {\r\n                // Handle exception (e.g., show error message)\r\n                e.printStackTrace();\r\n            }\r\n        } else {\r\n            Alert alert = new Alert(Alert.AlertType.ERROR);\r\n            alert.setTitle(\"Login Failed\");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(\"Invalid username or password.\");\r\n            alert.showAndWait();\r\n            // Handle invalid credentials (e.g., show error message)\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/bms/presentation/controllers/LoginController.java b/src/main/java/org/bms/presentation/controllers/LoginController.java
+--- a/src/main/java/org/bms/presentation/controllers/LoginController.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/org/bms/presentation/controllers/LoginController.java	(date 1717685346624)
+@@ -59,6 +59,9 @@
+                 Parent root = loader.load();
+ 
+                 // ... (Pass any necessary data to the next view)
++                // Get the UserDashboardController and pass the authenticated user
++                UserDashboardController userDashboardController = loader.getController();
++                userDashboardController.setAuthenticatedUser(authenticatedUser);
+ 
+                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                 stage.setScene(new Scene(root));
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0054d29a-013b-48fb-8ab1-d59715ff3d5b\" name=\"Changes\" comment=\"Login connected to dashboard\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/business/models/Account.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/business/models/Account.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/business/services/AccountService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/business/services/AccountService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;abdulrafayoc&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"f54495f6-9435-4f03-b741-50a8fa440d38\" />\r\n        <option name=\"url\" value=\"https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.sql/java/sql/SQLException.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2hPdlveGn8umOuR6oAUmKXwq0cK\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/hp/Desktop/SDA/bms/src/main/java/org/bms/presentation&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/FAST/SDA/Final/Bank-Management-System&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql_aurora_aws&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"businesslogic\" />\r\n      <recent name=\"dataaccesslayer\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"org.bms.presentation\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunAnythingCache\">\r\n    <option name=\"myCommands\">\r\n      <command value=\"HelloApplication\" />\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"20\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.bms.presentation.HelloApplication\" />\r\n      <module name=\"bms\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.bms.presentation.controllers.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0054d29a-013b-48fb-8ab1-d59715ff3d5b\" name=\"Changes\" comment=\"\" />\r\n      <created>1717499805614</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1717499805614</updated>\r\n      <workItem from=\"1717499806529\" duration=\"1627000\" />\r\n      <workItem from=\"1717572579947\" duration=\"387000\" />\r\n      <workItem from=\"1717572994980\" duration=\"62000\" />\r\n      <workItem from=\"1717573223385\" duration=\"10008000\" />\r\n      <workItem from=\"1717586393666\" duration=\"1046000\" />\r\n      <workItem from=\"1717598557837\" duration=\"44000\" />\r\n      <workItem from=\"1717598618517\" duration=\"2684000\" />\r\n      <workItem from=\"1717601354568\" duration=\"391000\" />\r\n      <workItem from=\"1717601770695\" duration=\"15053000\" />\r\n      <workItem from=\"1717622854446\" duration=\"2065000\" />\r\n      <workItem from=\"1717625554830\" duration=\"2114000\" />\r\n      <workItem from=\"1717651497770\" duration=\"13000\" />\r\n      <workItem from=\"1717665809404\" duration=\"597000\" />\r\n      <workItem from=\"1717668937781\" duration=\"144000\" />\r\n      <workItem from=\"1717669095869\" duration=\"18000\" />\r\n      <workItem from=\"1717669123266\" duration=\"5780000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"3 tier Architecture Done\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717588038081</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717588038081</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"implemented Singleton Pattern and Factory Pattern\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717613098579</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717613098579</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"implemented Singleton Pattern and Factory Pattern\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670330023</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670330023</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Login done\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670390948</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670390948</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Login connected to dashboard\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1717670737228</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1717670737228</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Created 3 Rier Archi\" />\r\n    <MESSAGE value=\"3 tier archi\" />\r\n    <MESSAGE value=\"3 tier archii\" />\r\n    <MESSAGE value=\"3 tier Architecture Done\" />\r\n    <MESSAGE value=\"implemented Dingleton Pattern and Factory Pattern\" />\r\n    <MESSAGE value=\"implemented Singleton Pattern and Factory Pattern\" />\r\n    <MESSAGE value=\"Login done\" />\r\n    <MESSAGE value=\"Login connected to dashboard\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Login connected to dashboard\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.io.FileNotFoundException\" package=\"java.io\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.sql.SQLException\" package=\"java.sql\" />\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/workspace.xml	(date 1717685555459)
+@@ -5,13 +5,16 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login connected to dashboard">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -30,6 +33,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="MIXED" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -235,7 +239,9 @@
+     <MESSAGE value="implemented Singleton Pattern and Factory Pattern" />
+     <MESSAGE value="Login done" />
+     <MESSAGE value="Login connected to dashboard" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Login connected to dashboard" />
++    <MESSAGE value="Input Validation on deposit" />
++    <MESSAGE value="changed deposit" />
++    <option name="LAST_COMMIT_MESSAGE" value="changed deposit" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/main/java/business/services/AccountService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package business.services;\r\n\r\nimport business.models.*;\r\nimport persistence.repository.*;\r\nimport business.services.factories.*;\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\npublic class AccountService {\r\n    private final AccountRepositoryImpl accountRepository;\r\n    private final TransactionRepositoryImpl transactionRepository;\r\n    private final CardRepositoryImpl cardRepository; // Add CardRepositoryImpl\r\n\r\n    public AccountService(AccountRepositoryImpl accountRepository,\r\n                          TransactionRepositoryImpl transactionRepository,\r\n                          CardRepositoryImpl cardRepository) { // Inject CardRepositoryImpl\r\n        this.accountRepository = accountRepository;\r\n        this.transactionRepository = transactionRepository;\r\n        this.cardRepository = cardRepository;\r\n    }\r\n\r\n    public Account createAccount(AccountType type, double initialBalance, Customer customer, Branch branch) {\r\n        AccountFactory factory = null;\r\n\r\n        // Determine the factory to use based on the account type\r\n        switch (type) {\r\n            case CHECKING:\r\n                factory = new CheckingAccountFactory();\r\n                break;\r\n            case SAVINGS:\r\n                factory = new SavingsAccountFactory();\r\n                break;\r\n            // ... add cases for other account types\r\n            default:\r\n                throw new IllegalArgumentException(\"Invalid account type: \" + type);\r\n        }\r\n\r\n        // Use the factory to create the account\r\n        Account newAccount = factory.createAccount(initialBalance, customer, branch);\r\n        accountRepository.save(newAccount);\r\n        return newAccount;\r\n    }\r\n\r\n    public void deposit(Account account, double amount) {\r\n        account.deposit(amount);\r\n        accountRepository.update(account); // Assuming you have an update method\r\n        Transaction transaction = new Transaction(generateTransactionId(), amount,\r\n                TransactionType.DEPOSIT, new Date(), account);\r\n        transactionRepository.save(transaction);\r\n    }\r\n\r\n    public void withdraw(Account account, double amount) {\r\n        account.withdraw(amount);\r\n        accountRepository.update(account);\r\n        Transaction transaction = new Transaction(generateTransactionId(), amount,\r\n                TransactionType.WITHDRAWAL, new Date(), account);\r\n        transactionRepository.save(transaction);\r\n    }\r\n\r\n    public void transfer(Account sourceAccount, Account destinationAccount, double amount) {\r\n        sourceAccount.transferTo(destinationAccount, amount);\r\n        accountRepository.update(sourceAccount);\r\n        accountRepository.update(destinationAccount);\r\n        // Create and save transactions for both source and destination\r\n    }\r\n\r\n    public void freezeAccount(Account account) {\r\n        account.setStatus(AccountStatus.FROZEN);\r\n        accountRepository.update(account);\r\n    }\r\n\r\n    public void addCardToAccount(Account account, Card card) {\r\n        account.addCard(card);\r\n        accountRepository.update(account);\r\n        cardRepository.save(card); // Save the card to the database\r\n    }\r\n\r\n    public void blockCard(Account account, String cardNumber) {\r\n        account.blockCard(cardNumber);\r\n        accountRepository.update(account); // Update account (card status changed)\r\n    }\r\n\r\n    // ... other account-related methods (findById, etc.)\r\n\r\n    private int generateAccountId() {\r\n        // Logic to generate a unique account ID\r\n        return 0; // Placeholder\r\n    }\r\n\r\n    private int generateTransactionId() {\r\n        // Logic to generate a unique transaction ID\r\n        return 0; // Placeholder\r\n    }\r\n\r\n    //get account by user id\r\n    public Account getAccountByUserId(int userId) {\r\n        return accountRepository.findById(userId);\r\n    }\r\n\r\n    //get balance by account id\r\n    public double getBalanceByAccountId(int accountId) {\r\n        return accountRepository.findById(accountId).getBalance();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/business/services/AccountService.java b/src/main/java/business/services/AccountService.java
+--- a/src/main/java/business/services/AccountService.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/business/services/AccountService.java	(date 1717685346621)
+@@ -1,6 +1,7 @@
+ package business.services;
+ 
+ import business.models.*;
++import javafx.scene.control.Alert;
+ import persistence.repository.*;
+ import business.services.factories.*;
+ 
+@@ -56,6 +57,11 @@
+         Transaction transaction = new Transaction(generateTransactionId(), amount,
+                 TransactionType.WITHDRAWAL, new Date(), account);
+         transactionRepository.save(transaction);
++        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
++        alert.setTitle("Transaction Successful");
++        alert.setHeaderText(null);
++        alert.setContentText("Money withdrawn successfully!");
++        alert.showAndWait();
+     }
+ 
+     public void transfer(Account sourceAccount, Account destinationAccount, double amount) {
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-233.14475.28\">\r\n    <data-source name=\"bms@localhost\" uuid=\"76df328c-4195-4b9a-a2d8-ee0abf1253ba\">\r\n      <database-info product=\"MySQL\" version=\"8.4.0\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"8.4.0\" exact-driver-version=\"8.2\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>root</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/.idea/dataSources.local.xml	(date 1717685352308)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-233.14475.28">
++  <component name="dataSourceStorageLocal" created-in="IU-241.17011.79">
+     <data-source name="bms@localhost" uuid="76df328c-4195-4b9a-a2d8-ee0abf1253ba">
+       <database-info product="MySQL" version="8.4.0" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.4.0" exact-driver-version="8.2">
+         <extra-name-characters>#@</extra-name-characters>
+Index: src/main/java/org/bms/presentation/controllers/UserDashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.bms.presentation.controllers;\r\n\r\nimport business.models.User;\r\nimport business.services.*;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class UserDashboardController {\r\n\r\n    @FXML\r\n    private Label welcomeLabel;\r\n\r\n    private User loggedInUser; // Store the logged-in user\r\n    private AccountService accountService;\r\n    private TransactionService transactionService;\r\n    private CustomerService customerService;\r\n\r\n    public UserDashboardController() {\r\n        // Initialize your fields, services, etc. here\r\n    }\r\n\r\n    public UserDashboardController(AccountService accountService,\r\n                                   TransactionService transactionService,\r\n                                   CustomerService customerService) {\r\n        this.accountService = accountService;\r\n        this.transactionService = transactionService;\r\n        this.customerService = customerService;\r\n    }\r\n\r\n    public void initializeDashboard(User user) {\r\n        this.loggedInUser = user;\r\n        welcomeLabel.setText(\"Welcome, \" + loggedInUser.getName());\r\n    }\r\n\r\n    @FXML\r\n    private void onDepositFunds(ActionEvent event) {\r\n        loadView(event, \"/org/bms/presentation/DepositFundsView.fxml\");\r\n    }\r\n\r\n    @FXML\r\n    private void onLogout(ActionEvent event) {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/org/bms/presentation/LoginView.fxml\"));\r\n            Parent root = loader.load();\r\n\r\n            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n            stage.show();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    private void onViewAccountDetails(ActionEvent event) {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/org/bms/presentation/AccountDetailsView.fxml\"));\r\n            Parent root = loader.load();\r\n\r\n            AccountDetailsViewController controller = loader.getController();\r\n            controller.initData(this.loggedInUser);\r\n\r\n            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n            stage.show();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    private void loadView(ActionEvent event, String fxmlFileName) {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFileName));\r\n            Parent root = loader.load();\r\n\r\n            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n            stage.setScene(new Scene(root));\r\n            stage.show();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/bms/presentation/controllers/UserDashboardController.java b/src/main/java/org/bms/presentation/controllers/UserDashboardController.java
+--- a/src/main/java/org/bms/presentation/controllers/UserDashboardController.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/org/bms/presentation/controllers/UserDashboardController.java	(date 1717685346626)
+@@ -37,16 +37,16 @@
+         this.customerService = customerService;
+     }
+ 
+-    public void initializeDashboard(User user) {
+-        this.loggedInUser = user;
+-        welcomeLabel.setText("Welcome, " + loggedInUser.getName());
+-    }
+-
+     @FXML
+     private void onDepositFunds(ActionEvent event) {
+         loadView(event, "/org/bms/presentation/DepositFundsView.fxml");
+     }
+ 
++    @FXML
++    private void onWithdrawFunds(ActionEvent event) {
++        loadView(event, "/org/bms/presentation/WithdrawFundsView.fxml");
++    }
++
+     @FXML
+     private void onLogout(ActionEvent event) {
+         try {
+@@ -90,4 +90,9 @@
+             e.printStackTrace();
+         }
+     }
++
++    public void setAuthenticatedUser(User user) {
++        this.loggedInUser = user;
++        welcomeLabel.setText("Welcome, " + loggedInUser.getName());
++    }
+ }
+\ No newline at end of file
+Index: src/main/java/business/models/Account.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package business.models;\r\n\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\npublic class Account {\r\n    private int accountId;\r\n    private double balance;\r\n    private AccountType type;\r\n    private AccountStatus status;\r\n    private Customer customer;\r\n    private Branch branch;\r\n    private List<Transaction> transactions;\r\n    private List<Card> cards;\r\n\r\n    public Account(double balance, AccountType type, Customer customer, Branch branch) {\r\n        this.balance = balance;\r\n        this.type = type;\r\n        this.customer = customer;\r\n        this.branch = branch;\r\n        this.transactions = new ArrayList<>();\r\n        this.cards = new ArrayList<>();\r\n        this.status = AccountStatus.ACTIVE;\r\n    }\r\n\r\n    public Account(double balance, AccountType type, AccountStatus status,\r\n                   Customer customer, Branch branch) {\r\n        this.balance = balance;\r\n        this.type = type;\r\n        this.status = status;\r\n        this.customer = customer;\r\n        this.branch = branch;\r\n        this.transactions = new ArrayList<>();\r\n        this.cards = new ArrayList<>();\r\n    }\r\n\r\n    // Getters and Setters\r\n\r\n    public void deposit(double amount) {\r\n        if (amount > 0) {\r\n            this.balance += amount;\r\n            // Log transaction (You'll likely use TransactionService for this)\r\n        } else {\r\n            throw new IllegalArgumentException(\"Deposit amount must be positive.\");\r\n        }\r\n    }\r\n\r\n    public void withdraw(double amount) {\r\n        if (status == AccountStatus.FROZEN) {\r\n            throw new IllegalStateException(\"Cannot withdraw from a frozen account.\");\r\n        }\r\n        if (amount > 0 && amount <= this.balance) {\r\n            this.balance -= amount;\r\n            // Log transaction\r\n        } else {\r\n            throw new IllegalArgumentException(\"Invalid withdrawal amount.\");\r\n        }\r\n    }\r\n\r\n    public void transferTo(Account destinationAccount, double amount) {\r\n        if (status == AccountStatus.FROZEN) {\r\n            throw new IllegalStateException(\"Cannot transfer from a frozen account.\");\r\n        }\r\n        this.withdraw(amount);\r\n        destinationAccount.deposit(amount);\r\n    }\r\n\r\n    public void addTransaction(Transaction transaction) {\r\n        this.transactions.add(transaction);\r\n    }\r\n\r\n    public void addCard(Card card) {\r\n        cards.add(card);\r\n    }\r\n\r\n    public void blockCard(String cardNumber) {\r\n        // Assuming you want to block by card number\r\n        for (Card card : cards) {\r\n            if (card.getCardNumber().equals(cardNumber)) {\r\n                card.block();\r\n                // Additional logic for card blocking (e.g., notification, database update)\r\n                return; // Assuming one card can only be blocked once\r\n            }\r\n        }\r\n        // Handle case where card number is not found (throw exception or log)\r\n    }\r\n\r\n\r\n    public int getAccountId() {\r\n        return accountId;\r\n    }\r\n\r\n    public void setAccountId(int accountId) {\r\n        this.accountId = accountId;\r\n    }\r\n\r\n    public double getBalance() {\r\n        return balance;\r\n    }\r\n\r\n    public void setBalance(double balance) {\r\n        this.balance = balance;\r\n    }\r\n\r\n    public AccountType getType() {\r\n        return type;\r\n    }\r\n\r\n    public void setType(AccountType type) {\r\n        this.type = type;\r\n    }\r\n\r\n    public AccountStatus getStatus() {\r\n        return status;\r\n    }\r\n\r\n    public void setStatus(AccountStatus status) {\r\n        this.status = status;\r\n    }\r\n\r\n    public Customer getCustomer() {\r\n        return customer;\r\n    }\r\n\r\n    public void setCustomer(Customer customer) {\r\n        this.customer = customer;\r\n    }\r\n\r\n    public Branch getBranch() {\r\n        return branch;\r\n    }\r\n\r\n    public void setBranch(Branch branch) {\r\n        this.branch = branch;\r\n    }\r\n\r\n    public List<Transaction> getTransactions() {\r\n        return transactions;\r\n    }\r\n\r\n    public void setTransactions(List<Transaction> transactions) {\r\n        this.transactions = transactions;\r\n    }\r\n\r\n    public List<Card> getCards() {\r\n        return cards;\r\n    }\r\n\r\n    public void setCards(List<Card> cards) {\r\n        this.cards = cards;\r\n    }\r\n\r\n    public Account getAccount() {\r\n        return this;\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/business/models/Account.java b/src/main/java/business/models/Account.java
+--- a/src/main/java/business/models/Account.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/business/models/Account.java	(date 1717685346620)
+@@ -15,6 +15,18 @@
+     private List<Transaction> transactions;
+     private List<Card> cards;
+ 
++    public Account(int id, double balance, AccountType type, AccountStatus status,
++                   Customer customer, Branch branch) {
++        this.accountId = id;
++        this.balance = balance;
++        this.type = type;
++        this.status = status;
++        this.customer = customer;
++        this.branch = branch;
++        this.transactions = new ArrayList<>();
++        this.cards = new ArrayList<>();
++    }
++
+     public Account(double balance, AccountType type, Customer customer, Branch branch) {
+         this.balance = balance;
+         this.type = type;
+Index: src/main/java/persistence/repository/AccountRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package persistence.repository;\r\n\r\nimport business.models.Account;\r\nimport persistence.DatabaseConnection;\r\n\r\nimport java.sql.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class AccountRepositoryImpl implements CrudRepository<Account, Integer> {\r\n\r\n\r\n    @Override\r\n    public <S extends Account> S save(S account) {\r\n        String sql = \"INSERT INTO accounts (balance, type, status, customer_id, branch_id) VALUES (?, ?, ?, ?, ?)\";\r\n        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection\r\n             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {\r\n\r\n            stmt.setDouble(1, account.getBalance());\r\n            stmt.setString(2, account.getType().toString());\r\n            stmt.setString(3, account.getStatus().toString());\r\n            stmt.setInt(4, account.getCustomer().getCustomerId());\r\n            stmt.setInt(5, account.getBranch().getBranchId());\r\n\r\n            int rowsAffected = stmt.executeUpdate();\r\n            if (rowsAffected == 0) {\r\n                throw new SQLException(\"Creating account failed, no rows affected.\");\r\n            }\r\n\r\n            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {\r\n                if (generatedKeys.next()) {\r\n                    account.setAccountId(generatedKeys.getInt(1));\r\n                } else {\r\n                    throw new SQLException(\"Creating account failed, no ID obtained.\");\r\n                }\r\n            }\r\n\r\n        } catch (SQLException e) {\r\n            // Handle exceptions (log, rethrow, etc.)\r\n            e.printStackTrace();\r\n        }\r\n        return account;\r\n    }\r\n\r\n    @Override\r\n    public Account findById(Integer accountId) {\r\n        String sql = \"SELECT * FROM accounts WHERE account_id = ?\";\r\n        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection\r\n             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {\r\n\r\n            stmt.setInt(1, accountId);\r\n            ResultSet rs = stmt.executeQuery();\r\n\r\n            if (rs.next()) {\r\n                // Retrieve by column name\r\n                int id = rs.getInt(\"account_id\");\r\n                double balance = rs.getDouble(\"balance\");\r\n                // ... retrieve other fields\r\n\r\n                // Assuming you have methods to fetch Customer and Branch by ID\r\n                // Customer customer = customerRepository.findById(...);\r\n                // Branch branch = branchRepository.findById(...);\r\n\r\n                // Account account = new Account(id, balance, /* ... other fields */);\r\n                // return account;\r\n            }\r\n\r\n        } catch (SQLException e) {\r\n            // Handle exceptions (log, rethrow, etc.)\r\n            e.printStackTrace();\r\n        }\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    public List<Account> findAll() {\r\n        List<Account> accounts = new ArrayList<>();\r\n        String sql = \"SELECT * FROM accounts\";\r\n\r\n\r\n        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection\r\n             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);\r\n             ResultSet rs = stmt.executeQuery(sql)) {\r\n\r\n\r\n            while (rs.next()) {\r\n                // Retrieve by column name\r\n                int id = rs.getInt(\"account_id\");\r\n                double balance = rs.getDouble(\"balance\");\r\n                // ... retrieve other fields\r\n\r\n                // Assuming you have methods to fetch Customer and Branch by ID\r\n                // Customer customer = customerRepository.findById(...);\r\n                // Branch branch = branchRepository.findById(...);\r\n\r\n                // Account account = new Account(id, balance, /* ... other fields */);\r\n                // accounts.add(account);\r\n            }\r\n\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n            // Handle exceptions (log, rethrow, etc.)\r\n        }\r\n\r\n        return accounts;\r\n    }\r\n\r\n    @Override\r\n    public void update(Account account) {\r\n        String sql = \"UPDATE accounts SET balance = ?, type = ?, status = ?, customer_id = ?, branch_id = ? WHERE account_id = ?\";\r\n        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection\r\n             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {\r\n\r\n\r\n            stmt.setDouble(1, account.getBalance());\r\n            stmt.setString(2, account.getType().toString());\r\n            stmt.setString(3, account.getStatus().toString());\r\n            stmt.setInt(4, account.getCustomer().getCustomerId());\r\n            stmt.setInt(5, account.getBranch().getBranchId());\r\n            stmt.setInt(6, account.getAccountId());\r\n\r\n            stmt.executeUpdate();\r\n        } catch (SQLException e) {\r\n            // Handle exceptions (log, rethrow, etc.)\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void deleteById(Integer accountId) {\r\n        // ... (Implementation for deleting an account by ID)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/persistence/repository/AccountRepositoryImpl.java b/src/main/java/persistence/repository/AccountRepositoryImpl.java
+--- a/src/main/java/persistence/repository/AccountRepositoryImpl.java	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/java/persistence/repository/AccountRepositoryImpl.java	(date 1717685346631)
+@@ -6,7 +6,8 @@
+ import java.sql.*;
+ import java.util.ArrayList;
+ import java.util.List;
+-
++import business.models.AccountType;
++import business.models.AccountStatus;
+ public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
+ 
+ 
+@@ -45,28 +46,34 @@
+     @Override
+     public Account findById(Integer accountId) {
+         String sql = "SELECT * FROM accounts WHERE account_id = ?";
+-        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+-             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
++        try (Connection conn = DatabaseConnection.getInstance().getConnection();
++             PreparedStatement stmt = conn.prepareStatement(sql)) {
+ 
+             stmt.setInt(1, accountId);
+             ResultSet rs = stmt.executeQuery();
+ 
+             if (rs.next()) {
+-                // Retrieve by column name
+                 int id = rs.getInt("account_id");
+                 double balance = rs.getDouble("balance");
+-                // ... retrieve other fields
++                String typeStr = rs.getString("type");
++                String statusStr = rs.getString("status");
++                int customerId = rs.getInt("customer_id");
++                int branchId = rs.getInt("branch_id");
+ 
+-                // Assuming you have methods to fetch Customer and Branch by ID
+-                // Customer customer = customerRepository.findById(...);
+-                // Branch branch = branchRepository.findById(...);
++                // Convert type and status from String to AccountType and AccountStatus
++                AccountType type = AccountType.valueOf(typeStr);
++                AccountStatus status = AccountStatus.valueOf(statusStr);
+ 
+-                // Account account = new Account(id, balance, /* ... other fields */);
+-                // return account;
++                // Fetch the Customer and Branch by their IDs
++                //Customer customer = customerRepository.findById(customerId);
++                //Branch branch = branchRepository.findById(branchId);
++
++                // Create and return an Account object
++                Account account = new Account(id, balance, type, status, null, null);
++                return account;
+             }
+ 
+         } catch (SQLException e) {
+-            // Handle exceptions (log, rethrow, etc.)
+             e.printStackTrace();
+         }
+         return null;
+Index: src/main/resources/org/bms/presentation/UserDashboardView.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<BorderPane prefHeight=\"270.0\" prefWidth=\"500.0\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"org.bms.presentation.controllers.UserDashboardController\">\r\n    <top>\r\n        <HBox alignment=\"CENTER\" prefHeight=\"60.0\" spacing=\"10.0\" style=\"-fx-background-color: #2c3e50;\">\r\n            <Label fx:id=\"welcomeLabel\" style=\"-fx-font-size: 24; -fx-text-fill: white;\" text=\"Welcome, User\" />\r\n            <Button fx:id=\"logoutButton\" style=\"-fx-font-size: 14;\" text=\"Logout\" onAction=\"#onLogout\"/>\r\n        </HBox>\r\n    </top>\r\n\r\n    <left>\r\n\r\n    </left>\r\n\r\n    <center>\r\n\r\n    </center>\r\n   <center>\r\n      <VBox alignment=\"CENTER\" spacing=\"15.0\" style=\"-fx-background-color: #777777\" BorderPane.alignment=\"CENTER\">\r\n          <Button fx:id=\"button_viewAccountDetails\" style=\"-fx-font-size: 16;\" text=\"View Account Details\" onAction=\"#onViewAccountDetails\" />\r\n          <Button fx:id=\"button_depoistFunds\" style=\"-fx-font-size: 16;\" text=\"Deposit Funds\" onAction=\"#onDepositFunds\" />\r\n          <Button fx:id=\"button_withdrawFunds\" style=\"-fx-font-size: 16;\" text=\"Withdraw Funds\" />\r\n          <Button fx:id=\"button_generateAccStatement\" style=\"-fx-font-size: 16;\" text=\"Generate Account Statement\" />\r\n\r\n      </VBox>\r\n   </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/org/bms/presentation/UserDashboardView.fxml b/src/main/resources/org/bms/presentation/UserDashboardView.fxml
+--- a/src/main/resources/org/bms/presentation/UserDashboardView.fxml	(revision 553f0e71e9723ee3cb1ce0706ad9bcfebfe5ce72)
++++ b/src/main/resources/org/bms/presentation/UserDashboardView.fxml	(date 1717685346633)
+@@ -25,7 +25,7 @@
+       <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #777777" BorderPane.alignment="CENTER">
+           <Button fx:id="button_viewAccountDetails" style="-fx-font-size: 16;" text="View Account Details" onAction="#onViewAccountDetails" />
+           <Button fx:id="button_depoistFunds" style="-fx-font-size: 16;" text="Deposit Funds" onAction="#onDepositFunds" />
+-          <Button fx:id="button_withdrawFunds" style="-fx-font-size: 16;" text="Withdraw Funds" />
++          <Button fx:id="button_withdrawFunds" style="-fx-font-size: 16;" text="Withdraw Funds" onAction="#onWithdrawFunds"/>
+           <Button fx:id="button_generateAccStatement" style="-fx-font-size: 16;" text="Generate Account Statement" />
+ 
+       </VBox>
