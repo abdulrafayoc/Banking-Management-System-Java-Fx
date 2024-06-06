@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="implemented Singleton Pattern and Factory Pattern">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" beforeDir="false" />
+    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login done">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +149,7 @@
       <workItem from="1717665809404" duration="597000" />
       <workItem from="1717668937781" duration="144000" />
       <workItem from="1717669095869" duration="18000" />
-      <workItem from="1717669123266" duration="1078000" />
+      <workItem from="1717669123266" duration="1580000" />
     </task>
     <task id="LOCAL-00001" summary="3 tier Architecture Done">
       <option name="closed" value="true" />
@@ -171,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717613098579</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implemented Singleton Pattern and Factory Pattern">
+      <option name="closed" value="true" />
+      <created>1717670330023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717670330023</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Login done">
+      <option name="closed" value="true" />
+      <created>1717670390948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717670390948</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +194,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -195,7 +219,8 @@
     <MESSAGE value="3 tier Architecture Done" />
     <MESSAGE value="implemented Dingleton Pattern and Factory Pattern" />
     <MESSAGE value="implemented Singleton Pattern and Factory Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Singleton Pattern and Factory Pattern" />
+    <MESSAGE value="Login done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

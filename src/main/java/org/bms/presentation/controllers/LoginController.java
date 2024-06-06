@@ -55,7 +55,7 @@ public class LoginController {
             alert.showAndWait();
             try {
                 // Load the appropriate dashboard based on user role
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/bms/presentation/hello-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/bms/presentation/UserDashboardView.fxml"));
                 Parent root = loader.load();
 
                 // ... (Pass any necessary data to the next view)

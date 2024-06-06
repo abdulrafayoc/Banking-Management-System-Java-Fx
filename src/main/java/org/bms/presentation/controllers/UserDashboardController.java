@@ -28,6 +28,9 @@ public class UserDashboardController {
     private CustomerService customerService;
     // ... other services
 
+    public UserDashboardController() {
+            // Initialize your fields, services, etc. here
+    }
     // Constructor or @Autowired (if using Spring)
     public UserDashboardController(AccountService accountService,
                                    TransactionService transactionService,
