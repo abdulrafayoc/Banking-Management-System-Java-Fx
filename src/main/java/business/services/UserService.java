@@ -7,6 +7,9 @@ import persistence.repository.*;
 public class UserService {
     private final UserRepositoryImpl userRepository;
 
+    public UserService() {
+        userRepository = new UserRepositoryImpl();
+    };
     public UserService(UserRepositoryImpl userRepository) {
         this.userRepository = userRepository;
     }

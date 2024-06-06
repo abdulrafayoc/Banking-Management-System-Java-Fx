@@ -93,4 +93,8 @@ public class AccountService {
         return 0; // Placeholder
     }
 
+    //get account by user id
+    public Account getAccountByUserId(int userId) {
+        return accountRepository.findById(userId);
+    }
 }
