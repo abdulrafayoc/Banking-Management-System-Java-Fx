@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.bms.presentation.controllers.UserDashboardController">
+<BorderPane prefHeight="270.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bms.presentation.controllers.UserDashboardController">
     <top>
-
+        <HBox alignment="CENTER" prefHeight="60.0" spacing="10.0" style="-fx-background-color: #2c3e50;">
+            <Label fx:id="welcomeLabel" style="-fx-font-size: 24; -fx-text-fill: white;" text="Welcome, User" />
+            <Button fx:id="logoutButton" style="-fx-font-size: 14;" text="Logout" />
+        </HBox>
     </top>
 
     <left>
@@ -20,4 +21,13 @@
     <center>
 
     </center>
+   <center>
+      <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #777777" BorderPane.alignment="CENTER">
+          <Button fx:id="button_viewAccountDetails" style="-fx-font-size: 16;" text="View Account Details" />
+          <Button fx:id="button_depoistFunds" style="-fx-font-size: 16;" text="Deposit Funds" />
+          <Button fx:id="button_withdrawFunds" style="-fx-font-size: 16;" text="Withdraw Funds" />
+          <Button fx:id="button_generateAccStatement" style="-fx-font-size: 16;" text="Generate Account Statement" />
+
+      </VBox>
+   </center>
 </BorderPane>

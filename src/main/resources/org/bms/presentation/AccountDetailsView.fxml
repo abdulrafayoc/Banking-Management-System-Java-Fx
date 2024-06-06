@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bms.presentation.controllers.AccountDetailsViewController" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label text="Account Details" style="-fx-font-size: 24;" />
+        <VBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Name:" />
+            <TextField fx:id="nameField" editable="false" />
+            <Label text="Account Type:" />
+            <TextField fx:id="accountType" editable="false" />
+            <Label text="Account Balance:" />
+            <TextField fx:id="balanceField" editable="false" />
+            <Label text="Account Status:" />
+            <TextField fx:id="statusField" editable="false" />
+            <Label text="Branch: " />
+            <TextField fx:id="branchField" editable="false" />
+        </VBox>
+    </children>
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+    </padding>
+</VBox>

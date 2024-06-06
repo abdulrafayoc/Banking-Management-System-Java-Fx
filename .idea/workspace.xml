@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="implemented Singleton Pattern and Factory Pattern">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/76df328c-4195-4b9a-a2d8-ee0abf1253ba.xml" afterDir="false" />
+    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="3 tier Architecture Done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/AccountDetailsViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/AccountDetailsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/blobs/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +75,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/hp/Desktop/SDA/bms/src/main/java/org/bms/presentation&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,7 +85,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -107,7 +111,6 @@
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="20" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.bms.presentation.HelloApplication" />
       <module name="bms" />
       <extension name="coverage">
@@ -150,8 +153,9 @@
       <workItem from="1717598557837" duration="44000" />
       <workItem from="1717598618517" duration="2684000" />
       <workItem from="1717601354568" duration="391000" />
-      <workItem from="1717601770695" duration="15053000" />
-      <workItem from="1717622854446" duration="2065000" />
+      <workItem from="1717601770695" duration="9763000" />
+      <workItem from="1717631393563" duration="359000" />
+      <workItem from="1717631765796" duration="1541000" />
     </task>
     <task id="LOCAL-00001" summary="3 tier Architecture Done">
       <option name="closed" value="true" />
@@ -161,15 +165,7 @@
       <option name="project" value="LOCAL" />
       <updated>1717588038081</updated>
     </task>
-    <task id="LOCAL-00002" summary="implemented Singleton Pattern and Factory Pattern">
-      <option name="closed" value="true" />
-      <created>1717613098579</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1717613098579</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,18 +187,6 @@
     <MESSAGE value="3 tier archi" />
     <MESSAGE value="3 tier archii" />
     <MESSAGE value="3 tier Architecture Done" />
-    <MESSAGE value="implemented Dingleton Pattern and Factory Pattern" />
-    <MESSAGE value="implemented Singleton Pattern and Factory Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Singleton Pattern and Factory Pattern" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.io.FileNotFoundException" package="java.io" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="3 tier Architecture Done" />
   </component>
 </project>

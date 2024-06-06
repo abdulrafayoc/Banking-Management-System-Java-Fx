@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+//import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class UserDashboardController {
@@ -45,13 +46,6 @@ public void initializeDashboard(User user) {
     welcomeLabel.setText("Welcome, " + loggedInUser.getName());
 }
 
-// Button Action Handlers (Examples)
-@FXML
-private void onViewAccountDetails(ActionEvent event) {
-    // Load Account Details view and pass loggedInUser if needed
-    loadView(event, "AccountDetailsView.fxml");
-}
-
 @FXML
 private void onDepositFunds(ActionEvent event) {
     // Load Deposit Funds view
@@ -62,7 +56,7 @@ private void onDepositFunds(ActionEvent event) {
 
 @FXML
 private void onLogout(ActionEvent event) {
-    // Handle logout (e.g., clear session, navigate back to login)
+    // Handle logout (e.g., clear session, navigate back to log in)
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
         Parent root = loader.load();
@@ -74,6 +68,26 @@ private void onLogout(ActionEvent event) {
         e.printStackTrace();
     }
 }
+
+    @FXML
+    private void onViewAccountDetails(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountDetailsView.fxml"));
+            Parent root = loader.load();
+
+            // Get the controller of the loaded view
+            AccountDetailsViewController controller = loader.getController();
+            // Initialize the controller with the logged-in user
+            controller.initData(this.loggedInUser);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., show an error message)
+        }
+    }
 
 // Helper method to load other views
 private void loadView(ActionEvent event, String fxmlFileName) {
