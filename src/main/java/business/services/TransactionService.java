@@ -11,7 +11,9 @@ import java.util.Date;
 
 public class TransactionService {
     private final TransactionRepositoryImpl transactionRepository;
-
+    public TransactionService() {
+        this.transactionRepository = new TransactionRepositoryImpl();
+    }
     public TransactionService(TransactionRepositoryImpl transactionRepository) {
         this.transactionRepository = transactionRepository;
     }

@@ -8,8 +8,6 @@ import javafx.scene.control.TextField;
 
 public class WithdrawFundsController {
 
-    @FXML
-    private TextField accountField;
 
     @FXML
     private TextField withdrawAmountField;
@@ -33,14 +31,14 @@ public class WithdrawFundsController {
 
     @FXML
     private void onWithdrawButtonClick() {
-        // Get the account number from the text field
-        String accountNumberText = accountField.getText();
-        int accountNumber = Integer.parseInt(accountNumberText);
-
         // Get the withdrawal amount from the text field
         String withdrawAmountText = withdrawAmountField.getText();
         double withdrawAmount = Double.parseDouble(withdrawAmountText);
 
+        if(withdrawAmount <= 0) {
+            confirmationLabel.setText("Withdrawal amount must be positive.");
+            return;
+        }
         //Calculate the new balance
         double newBalance = withdrawAmount;
         // This will depend on how your accountService.deposit method works

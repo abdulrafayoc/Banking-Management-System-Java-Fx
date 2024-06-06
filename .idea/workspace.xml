@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Fixed some issues">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/WithdrawFundsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/WithdrawFundsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/AccountDetailsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/AccountDetailsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/WithdrawFundsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/WithdrawFundsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/WithdrawFundsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/WithdrawFundsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

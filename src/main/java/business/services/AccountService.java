@@ -13,6 +13,11 @@ public class AccountService {
     private final TransactionRepositoryImpl transactionRepository;
     private final CardRepositoryImpl cardRepository; // Add CardRepositoryImpl
 
+    public AccountService() {
+        this.accountRepository = new AccountRepositoryImpl();
+        this.transactionRepository = new TransactionRepositoryImpl();
+        this.cardRepository = new CardRepositoryImpl(); // Initialize CardRepositoryImpl
+    }
     public AccountService(AccountRepositoryImpl accountRepository,
                           TransactionRepositoryImpl transactionRepository,
                           CardRepositoryImpl cardRepository) { // Inject CardRepositoryImpl

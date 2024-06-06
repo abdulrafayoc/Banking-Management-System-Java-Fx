@@ -38,6 +38,14 @@ public class AccountDetailsViewController {
     private CustomerService customerService;
     // ... other services
 
+
+    public AccountDetailsViewController() {
+        // You can leave this empty, or you can initialize services here
+        this.accountService = new AccountService( );
+        this.transactionService = new TransactionService();
+        this.customerService = new CustomerService();
+
+    }
     // Constructor or @Autowired (if using Spring)
     public AccountDetailsViewController(AccountService accountService,
                                        TransactionService transactionService,

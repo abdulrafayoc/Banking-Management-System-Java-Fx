@@ -12,7 +12,9 @@ import java.util.List;
 
 public class CustomerService {
     private final CustomerRepositoryImpl customerRepository;
-
+    public CustomerService() {
+        this.customerRepository = new CustomerRepositoryImpl();
+    }
     public CustomerService(CustomerRepositoryImpl customerRepository) {
         this.customerRepository = customerRepository;
     }

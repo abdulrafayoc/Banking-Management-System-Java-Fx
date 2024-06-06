@@ -19,7 +19,6 @@ public class DepositFundsController {
     @FXML
     private void onDepositButtonClick() {
 
-        int accountNumber = Integer.parseInt(accountField.getText());
         double depositAmount = Double.parseDouble(depositAmountField.getText());
         double newBalance = depositAmount;
         if (depositAmount <= 0) {
