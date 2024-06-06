@@ -44,7 +44,31 @@ public class AccountRepositoryImpl implements CrudRepository<Account, Integer> {
 
     @Override
     public Account findById(Integer accountId) {
-        // ... (Implementation for finding an account by ID)
+        String sql = "SELECT * FROM accounts WHERE account_id = ?";
+        try (Connection conn = DatabaseConnection.getInstance().getConnection(); // Get connection
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            stmt.setInt(1, accountId);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Retrieve by column name
+                int id = rs.getInt("account_id");
+                double balance = rs.getDouble("balance");
+                // ... retrieve other fields
+
+                // Assuming you have methods to fetch Customer and Branch by ID
+                // Customer customer = customerRepository.findById(...);
+                // Branch branch = branchRepository.findById(...);
+
+                // Account account = new Account(id, balance, /* ... other fields */);
+                // return account;
+            }
+
+        } catch (SQLException e) {
+            // Handle exceptions (log, rethrow, etc.)
+            e.printStackTrace();
+        }
         return null;
     }
 

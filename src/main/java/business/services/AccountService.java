@@ -97,4 +97,9 @@ public class AccountService {
     public Account getAccountByUserId(int userId) {
         return accountRepository.findById(userId);
     }
+
+    //get balance by account id
+    public double getBalanceByAccountId(int accountId) {
+        return accountRepository.findById(accountId).getBalance();
+    }
 }

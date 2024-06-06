@@ -151,5 +151,9 @@ public class Account {
     public void setCards(List<Card> cards) {
         this.cards = cards;
     }
+
+    public Account getAccount() {
+        return this;
+    }
 }
 

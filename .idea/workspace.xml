@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login done">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0054d29a-013b-48fb-8ab1-d59715ff3d5b" name="Changes" comment="Login connected to dashboard">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/DepositFundsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/DepositFundsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/services/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bms/presentation/controllers/UserDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repository/AccountRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/bms/presentation/UserDashboardView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +37,14 @@
     &quot;assignee&quot;: &quot;abdulrafayoc&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git&quot;,
-    &quot;accountId&quot;: &quot;e5f37bfe-7f8b-4012-a870-0b8a749de2b7&quot;
-  }
-}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f54495f6-9435-4f03-b741-50a8fa440d38" />
+        <option name="url" value="https://github.com/abdulrafayoc/Banking-Management-System-Java-Fx.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/corretto-20.0.2.1/lib/src.zip!/java.sql/java/sql/SQLException.java" root0="SKIP_INSPECTION" />
   </component>
@@ -149,7 +155,7 @@
       <workItem from="1717665809404" duration="597000" />
       <workItem from="1717668937781" duration="144000" />
       <workItem from="1717669095869" duration="18000" />
-      <workItem from="1717669123266" duration="1580000" />
+      <workItem from="1717669123266" duration="5780000" />
     </task>
     <task id="LOCAL-00001" summary="3 tier Architecture Done">
       <option name="closed" value="true" />
@@ -183,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717670390948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Login connected to dashboard">
+      <option name="closed" value="true" />
+      <created>1717670737228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717670737228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +234,8 @@
     <MESSAGE value="implemented Dingleton Pattern and Factory Pattern" />
     <MESSAGE value="implemented Singleton Pattern and Factory Pattern" />
     <MESSAGE value="Login done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login done" />
+    <MESSAGE value="Login connected to dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login connected to dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
