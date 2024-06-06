@@ -21,17 +21,15 @@ public class DepositFundsController {
 
     @FXML
     private void onDepositButtonClick() {
-        // Get the account number and deposit amount from the text fields
-        String accountNumber = accountField.getText();
-        String depositAmountText = depositAmountField.getText();
-        double depositAmount = Double.parseDouble(depositAmountText);
 
-        // Perform the deposit operation
-        // This might involve calling a method on a service object, for example
-        // accountService.deposit(accountNumber, depositAmount);
-
-        //Calculate the new balance
+        int accountNumber = Integer.parseInt(accountField.getText());
+        double depositAmount = Double.parseDouble(depositAmountField.getText());
         double newBalance = depositAmount;
+        if (depositAmount <= 0) {
+            confirmationLabel.setText("Deposit amount must be positive.");
+            return;
+        }
+        //Calculate the new balance
         // This will depend on how your accountService.deposit method works
         // For example, if it returns the new balance, you could do:
         // double newBalance = accountService.deposit(accountNumber, depositAmount);
