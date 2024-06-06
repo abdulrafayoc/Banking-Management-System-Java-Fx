@@ -8,9 +8,6 @@ import javafx.scene.control.TextField;
 public class DepositFundsController {
 
     @FXML
-    private TextField accountField;
-
-    @FXML
     private TextField depositAmountField;
 
     @FXML
@@ -29,6 +26,7 @@ public class DepositFundsController {
             confirmationLabel.setText("Deposit amount must be positive.");
             return;
         }
+
         //Calculate the new balance
         // This will depend on how your accountService.deposit method works
         // For example, if it returns the new balance, you could do:
